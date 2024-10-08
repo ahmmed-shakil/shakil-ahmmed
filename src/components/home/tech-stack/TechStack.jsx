@@ -59,8 +59,8 @@ const techStack = [
   }, // Mongoose icon
   {
     name: "Prisma",
-    icon: <FaChartLine className="text-4xl" />,
-    color: "bg-green-500",
+    icon: <FaDatabase className="text-4xl" />,
+    color: "bg-blue-500",
   }, // Prisma icon
   {
     name: "GraphQL",
