@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Merriweather", serif; /* Use Merriweather for the body */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+  overflow: auto; /* Enable scrolling */
+  cursor: none;
+}
+
+html {
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+  overflow: auto; /* Enable scrolling */
+}
+
+:root {
+  --primary: #dd2c5b;
+}
+
+.snap-container {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll; /* Add overflow to enable vertical scrolling */
+}
+
+.snap-section {
+  height: 100vh;
+  scroll-snap-align: start; /* Snap sections to the top */
+}
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+  .snap-section {
+    height: auto;
+  }
+  .snap-container {
+    scroll-snap-type: none;
+    height: auto;
+  }
+}

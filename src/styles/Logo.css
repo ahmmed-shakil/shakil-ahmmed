@@ -1,0 +1,70 @@
+.logo {
+  position: relative;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.logo::after,
+.logo::before {
+  content: "";
+  background-image: conic-gradient(from var(--angle), transparent, #dd2c5b);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box; /* Ensure border is included in element's width and height */
+  z-index: -1;
+  animation: 3s spin linear infinite;
+  border-radius: 8px;
+}
+.logo::before {
+  /* filter: blur(1.5rem); */
+  opacity: 0.2;
+}
+@keyframes spin {
+  0% {
+    --angle: 0deg;
+  }
+  10% {
+    --angle: 36deg;
+  }
+  20% {
+    --angle: 72deg;
+  }
+  30% {
+    --angle: 108deg;
+  }
+  40% {
+    --angle: 144deg;
+  }
+  50% {
+    --angle: 180deg;
+  }
+  60% {
+    --angle: 216deg;
+  }
+  70% {
+    --angle: 252deg;
+  }
+  80% {
+    --angle: 288deg;
+  }
+  90% {
+    --angle: 324deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
+
+/* .menu {
+  background-image: url("../assets//images//bg.jpg");
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+} */
