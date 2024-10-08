@@ -42,7 +42,7 @@ const CustomCursor = () => {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 rounded-full border-2 border-primary pointer-events-none z-50 "
+        className="hidden md:block md:fixed top-0 left-0 w-8 h-8 rounded-full border-2 border-primary pointer-events-none z-50 "
         animate={isClicking ? "clicking" : "default"}
         variants={variants}
         transition={{ type: "spring", stiffness: 500, damping: 28 }}

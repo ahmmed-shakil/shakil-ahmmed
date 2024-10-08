@@ -124,13 +124,13 @@ export default function Hero() {
           className="text-center z-10"
         >
           <motion.h1
-            className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-800 to-primary"
+            className="text-2xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-800 to-primary"
             whileHover={{ scale: 1.05 }}
           >
             Full Stack Develo<span className="text-primary">p</span>er
           </motion.h1>
           <motion.p
-            className="text-xl md:text-2xl mb-8 mt-7 bg-clip-text text-transparent bg-gradient-to-r from-rose-800 to-primary"
+            className="text-lg md:text-xl mb-8 mt-7 bg-clip-text text-transparent bg-gradient-to-r from-rose-800 to-primary"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}

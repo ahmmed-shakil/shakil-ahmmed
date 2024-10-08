@@ -15,8 +15,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  /* width: 100%; */
+  /* height: 100%; */
   box-sizing: border-box; /* Ensure border is included in element's width and height */
   z-index: -1;
   animation: 3s spin linear infinite;
