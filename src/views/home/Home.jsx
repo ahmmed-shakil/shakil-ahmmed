@@ -1,5 +1,5 @@
-import About from "../../components/home/about/About";
 import Contact from "../../components/home/contact/Contact";
+import About from "../../components/home/about/About";
 import Hero from "../../components/home/hero/Hero";
 import Projects from "../../components/home/projects/Projects";
 import TechStack from "../../components/home/tech-stack/TechStack";
