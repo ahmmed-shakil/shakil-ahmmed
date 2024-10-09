@@ -4,11 +4,13 @@ import Hero from "../../components/home/hero/Hero";
 import Projects from "../../components/home/projects/Projects";
 import TechStack from "../../components/home/tech-stack/TechStack";
 import ContentLayout from "../../layouts/ContentLayout";
+import AnimatedShapes from "../../components/shared/AnimatedShapes";
 // import Navbar from "../../layouts/navbar/Menu";
 
 const Home = () => {
   return (
     <div className=" snap-container">
+      <AnimatedShapes />
       <Hero />
       <About />
       <TechStack />
