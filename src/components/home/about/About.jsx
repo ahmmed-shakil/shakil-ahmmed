@@ -18,13 +18,13 @@ const About = () => {
   };
 
   return (
-    <main className="snap-section bg-white flex flex-col justify-center">
+    <main className="">
       <div className="max-w-6xl flex flex-col justify-center mx-auto px-4 sm:px-6 lg:px-8">
         <Title title={"About Me"} />
-        <section className="rounded-md mt-8 ">
+        <div className="rounded-md mt-8 ">
           <div className=" mx-auto ">
             <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 items-center"
+              className="grid grid-cols-1 md:grid-cols-2 items-center gap-4"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
@@ -149,7 +149,7 @@ const About = () => {
               </motion.div>
             </motion.div>
           </div>
-        </section>
+        </div>
       </div>
     </main>
   );

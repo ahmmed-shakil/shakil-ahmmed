@@ -36,18 +36,16 @@ const Projects = () => {
   ];
 
   return (
-    <div className="snap-section bg-white flex flex-col justify-center items-center w-full">
+    <div>
       <main className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8">
-        <section>
-          <Title title={"Projects"} />
-          <div className="mt-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {projectsData.map((project, index) => (
-                <ProjectCard key={index} project={project} />
-              ))}
-            </div>
+        <Title title={"Projects"} />
+        <div className="mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {projectsData.map((project, index) => (
+              <ProjectCard key={index} project={project} />
+            ))}
           </div>
-        </section>
+        </div>
         <div className=" mt-14 flex justify-center">
           <motion.button
             className="bg-primary text-white px-6 py-2 rounded-md text-md shadow-md transition-colors duration-200 flex items-center justify-center"

@@ -98,43 +98,41 @@ const TechStack = () => {
   }, []);
 
   return (
-    <section className="snap-section flex bg-white flex-col justify-center">
-      <div className="bg-white py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Title title={"Tech Stack"} />
-          <div className="grid grid-cols-1 md:grid-cols-1 gap-8 mt-8">
-            <div className="md:col-span-2">
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
-                {techStack.map((tech, index) => (
-                  <motion.div
-                    key={tech.name}
-                    className={`${tech.color} rounded-lg shadow-lg p-6 flex flex-col items-center justify-center text-white cursor-pointer`}
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    whileHover={{
-                      scale: 1.05,
-                      rotate: 5,
-                      boxShadow: "0px 0px 8px rgba(0,0,0,0.3)",
-                    }}
-                    whileTap={{ scale: 0.95 }}
+    <div className="bg-white py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Title title={"Tech Stack"} />
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-8 mt-8">
+          <div className="md:col-span-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+              {techStack.map((tech, index) => (
+                <motion.div
+                  key={tech.name}
+                  className={`${tech.color} rounded-lg shadow-lg p-6 flex flex-col items-center justify-center text-white cursor-pointer`}
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{
+                    scale: 1.05,
+                    rotate: 5,
+                    boxShadow: "0px 0px 8px rgba(0,0,0,0.3)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <motion.span
+                    className="text-4xl mb-2"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.5 }}
                   >
-                    <motion.span
-                      className="text-4xl mb-2"
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      {tech.icon}
-                    </motion.span>
-                    <h3 className="text-lg font-semibold">{tech.name}</h3>
-                  </motion.div>
-                ))}
-              </div>
+                    {tech.icon}
+                  </motion.span>
+                  <h3 className="text-lg font-semibold">{tech.name}</h3>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

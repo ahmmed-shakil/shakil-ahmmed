@@ -50,7 +50,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="snap-section bg-white min-h-screen flex flex-col justify-center items-center w-full py-16">
+    <div>
       <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8">
         {/* <motion.h2
           className="text-4xl font-bold text-center mb-12"

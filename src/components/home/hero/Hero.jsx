@@ -95,7 +95,7 @@ export default function Hero() {
   ];
 
   return (
-    <div className=" snap-section">
+    <div>
       <div className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-gradient-to-br from-white to-gray-100 text-primary p-4">
         {/* Animated background shapes */}
         <div className="absolute inset-0 overflow-hidden">
@@ -154,7 +154,7 @@ export default function Hero() {
           >
             Download Resume
           </motion.button>
-          <motion.button
+          {/* <motion.button
             className="bg-slate-100 text-primary px-8 py-3 rounded-md text-md font-semibold shadow-lg border border-primary transition-colors duration-200"
             whileHover={{
               backgroundColor: "#dd2c5b",
@@ -167,7 +167,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.1 }}
           >
             Explore Projects
-          </motion.button>
+          </motion.button> */}
         </motion.div>
 
         <motion.div className="flex space-x-6 mt-8 z-10">
