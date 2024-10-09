@@ -141,7 +141,7 @@ export default function Hero() {
 
         <motion.div className="flex flex-col md:flex-row items-center gap-3 z-10">
           <motion.button
-            className="bg-primary text-white px-8 py-3 border border-primary rounded-md text-lg font-semibold shadow-lg transition-colors duration-200"
+            className="bg-primary text-white px-8 py-3 border border-primary rounded-md text-md font-semibold shadow-lg transition-colors duration-200"
             whileHover={{
               backgroundColor: "white",
               color: "#dd2c5b",
@@ -155,7 +155,7 @@ export default function Hero() {
             Download Resume
           </motion.button>
           <motion.button
-            className="bg-slate-100 text-primary px-8 py-3 rounded-md text-lg font-semibold shadow-lg border border-primary transition-colors duration-200"
+            className="bg-slate-100 text-primary px-8 py-3 rounded-md text-md font-semibold shadow-lg border border-primary transition-colors duration-200"
             whileHover={{
               backgroundColor: "#dd2c5b",
               color: "white",

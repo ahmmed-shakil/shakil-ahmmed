@@ -32,7 +32,7 @@ const About = () => {
               {/* Left side - Content */}
               <div className="order-2 md:order-1">
                 <motion.h2
-                  className="text-md font-semibold text-gray-800 mb-0"
+                  className="text-sm font-semibold text-gray-800 mb-0"
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
@@ -48,7 +48,7 @@ const About = () => {
                   SHAKIL AHMMED JOY
                 </motion.h1>
                 <motion.h3
-                  className="text-lg text-gray-600 mb-0"
+                  className="text-md text-gray-600 mb-0"
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
@@ -64,7 +64,7 @@ const About = () => {
                   Mymensingh, Bangladesh
                 </motion.p>
                 <motion.p
-                  className="text-gray-700 text-sm mb-2 text-justify"
+                  className="text-gray-700  mb-2 text-justify"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
@@ -75,7 +75,7 @@ const About = () => {
                   environments, consistently delivering quality results on time.
                 </motion.p>
                 <motion.p
-                  className="text-gray-700 text-sm mb-6 text-justify"
+                  className="text-gray-700  mb-6 text-justify"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
@@ -96,7 +96,7 @@ const About = () => {
                   transition={{ duration: 0.5, delay: 0.7 }}
                 >
                   <motion.button
-                    className="bg-primary text-white px-6 py-2 rounded-md text-lg font-semibold shadow-md transition-colors duration-200 flex items-center justify-center"
+                    className="bg-primary text-white px-6 py-2 rounded-md text-md shadow-md transition-colors duration-200 flex items-center justify-center"
                     whileHover={{ scale: 1.05, backgroundColor: "#c41e4a" }}
                     whileTap={{ scale: 0.95 }}
                     onClick={handleReadMore}
