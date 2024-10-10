@@ -55,7 +55,7 @@ const Contact = () => {
 
   return (
     <div>
-      <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl flex flex-col justify-center mx-auto px-4 sm:px-6 lg:px-8">
         {/* <motion.h2
           className="text-4xl font-bold text-center mb-12"
           initial={{ opacity: 0, y: -50 }}
@@ -80,11 +80,9 @@ const Contact = () => {
             <motion.div
               className="flex items-center space-x-4 text-md"
               ref={textRef}
-              initial={{ opacity: 0, x: -50, y: 50 }}
+              initial={{ opacity: 0, y: 50 }}
               animate={
-                iStackInView
-                  ? { opacity: 1, x: 0, y: 0 }
-                  : { opacity: 0, x: -50, y: 50 }
+                iStackInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
               }
               transition={{ duration: 0.5, delay: 0.2 }}
               whileHover={{ scale: 1.05 }}
@@ -101,11 +99,9 @@ const Contact = () => {
               className="flex items-center space-x-4 text-md"
               whileHover={{ scale: 1.05 }}
               ref={textRef}
-              initial={{ opacity: 0, x: -50, y: 50 }}
+              initial={{ opacity: 0, y: 50 }}
               animate={
-                iStackInView
-                  ? { opacity: 1, x: 0, y: 0 }
-                  : { opacity: 0, x: -50, y: 50 }
+                iStackInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
               }
               transition={{ duration: 0.5, delay: 0.4 }}
             >
@@ -121,11 +117,9 @@ const Contact = () => {
               className="flex items-center space-x-4 text-md"
               whileHover={{ scale: 1.05 }}
               ref={textRef}
-              initial={{ opacity: 0, x: -50, y: 50 }}
+              initial={{ opacity: 0, y: 50 }}
               animate={
-                iStackInView
-                  ? { opacity: 1, x: 0, y: 0 }
-                  : { opacity: 0, x: -50, y: 50 }
+                iStackInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
               }
               transition={{ duration: 0.5, delay: 0.6 }}
             >
@@ -141,11 +135,9 @@ const Contact = () => {
               className="flex items-center space-x-4 text-md"
               whileHover={{ scale: 1.05 }}
               ref={textRef}
-              initial={{ opacity: 0, x: -50, y: 50 }}
+              initial={{ opacity: 0, y: 50 }}
               animate={
-                iStackInView
-                  ? { opacity: 1, x: 0, y: 0 }
-                  : { opacity: 0, x: -50, y: 50 }
+                iStackInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
               }
               transition={{ duration: 0.5, delay: 0.8 }}
             >
@@ -162,9 +154,9 @@ const Contact = () => {
             onSubmit={handleSubmit}
             ref={textRef}
             className="space-y-6 col-span-2"
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={
-              iStackInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }
+              iStackInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
             }
             transition={{ duration: 0.8, delay: 0 }}
           >

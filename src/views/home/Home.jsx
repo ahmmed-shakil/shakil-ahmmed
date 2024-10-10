@@ -48,32 +48,32 @@ const Home = () => {
   return (
     <div className="snap-container">
       <section
-        className=" snap-section  bg-white flex flex-col justify-center px-0 "
+        className=" snap-section  bg-white flex flex-col justify-center p-0 m-0"
         id="home"
       >
         <Hero />
       </section>
       <section
         id="about"
-        className="snap-section  bg-white flex flex-col justify-center px-0"
+        className="snap-section  bg-white flex flex-col justify-center p-0 m-0"
       >
-        <About activeSection={activeSection} />
+        <About />
       </section>
       <section
         id="tech-stack"
-        className=" snap-section  bg-white flex flex-col justify-center px-0"
+        className=" snap-section  bg-white flex flex-col justify-center p-0 m-0"
       >
         <TechStack />
       </section>
       <section
         id="projects"
-        className=" snap-section  bg-white flex flex-col justify-center px-0"
+        className=" snap-section  bg-white flex flex-col justify-center p-0 m-0"
       >
         <Projects />
       </section>
       <section
         id="contact"
-        className=" snap-section  bg-white flex flex-col justify-center px-0"
+        className=" snap-section  bg-white flex flex-col justify-center p-0 m-0"
       >
         <Contact />
       </section>

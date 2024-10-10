@@ -43,7 +43,7 @@ export default function About() {
   };
 
   return (
-    <main className="bg-background">
+    <main ref={rightRef}>
       <div className="max-w-6xl flex flex-col justify-center mx-auto px-4 sm:px-6 lg:px-8">
         <Title title="About Me" />
         <div className="rounded-md mt-8">
@@ -136,13 +136,13 @@ export default function About() {
               <motion.div className="order-1 md:order-2">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  ref={rightRef}
-                  initial={{ opacity: 0, x: 50 }}
+                  // transition={{ type: "spring", stiffness: 300 }}
+                  // ref={rightRef}
+                  initial={{ opacity: 0, y: 50 }}
                   animate={
-                    isRightInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }
+                    isRightInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
                   }
-                  // transition={{ duration: 0.5, delay: 0 }}
+                  transition={{ duration: 1, delay: 0.2 }}
                   className="relative w-full h-80 aspect-square max-w-md mx-auto"
                 >
                   <img

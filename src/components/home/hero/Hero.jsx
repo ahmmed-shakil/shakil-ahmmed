@@ -97,7 +97,7 @@ export default function Hero() {
   ];
 
   return (
-    <div>
+    <div className=" w-full ">
       <div className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-gradient-to-br from-white to-gray-100 text-primary p-4">
         {/* Animated background shapes */}
         <div className="absolute inset-0 overflow-hidden">
@@ -183,13 +183,9 @@ export default function Hero() {
               className="text-primary hover:text-primary-foreground transition-colors duration-200"
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
-              initial={{ opacity: 0, x: -50, y: 50 }}
-              animate={
-                isInView
-                  ? { opacity: 1, y: 0, x: 0 }
-                  : { opacity: 0, y: 50, x: -50 }
-              }
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.8, delay: 0 }}
             >
               <Icon size={24} />
             </motion.a>
