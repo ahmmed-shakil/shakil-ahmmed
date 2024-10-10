@@ -51,7 +51,7 @@ html {
   position: relative;
   z-index: 1;
   display: inline-block;
-  padding-bottom: 4px; /* Adding some padding for space around the borders */
+  /* padding-left: 4px;  */
 }
 .section-title::before,
 .section-title::after {
@@ -61,10 +61,12 @@ html {
   transition: all 0.3s ease-out;
   /* top: 0; */
   left: 0;
+  top: 0;
+  transform: translateY(50%);
 }
 .section-title::before {
   width: 4px;
-  height: 75%;
+  height: 50%;
   bottom: 0;
   right: 0;
   transition-delay: 0.6s;

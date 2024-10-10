@@ -1,15 +1,24 @@
-import { useState } from "react";
+/* eslint-disable react/prop-types */
+import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-// import Image from "../../../assets/img/hero/js.png";
 import { ChevronDown } from "lucide-react";
 import Title from "../../shared/Title";
 
-const About = () => {
+const About = ({ activeSection }) => {
+  console.log("🚀 ~ About ~ activeSection:", activeSection);
   const [isExpanded, setIsExpanded] = useState(false);
   const controls = useAnimation();
 
+  useEffect(() => {
+    if (activeSection === "about") {
+      controls.start({ opacity: 1, y: 0 });
+    } else {
+      controls.start({ opacity: 0, y: 50 });
+    }
+  }, [activeSection, controls]);
+
   const handleReadMore = () => {
-    setIsExpanded(!isExpanded);
+    setIsExpanded((prev) => !prev);
     controls.start({
       height: isExpanded ? "0px" : "auto",
       opacity: isExpanded ? 0 : 1,
@@ -26,7 +35,7 @@ const About = () => {
             <motion.div
               className="grid grid-cols-1 md:grid-cols-2 items-center gap-4"
               initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={controls} // Use animation controls here
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               {/* Left side - Content */}
@@ -64,7 +73,7 @@ const About = () => {
                   Mymensingh, Bangladesh
                 </motion.p>
                 <motion.p
-                  className="text-gray-700  mb-2 text-justify"
+                  className="text-gray-700 mb-2 text-justify"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
@@ -75,19 +84,17 @@ const About = () => {
                   environments, consistently delivering quality results on time.
                 </motion.p>
                 <motion.p
-                  className="text-gray-700  mb-6 text-justify"
+                  className="text-gray-700 mb-6 text-justify"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
                 >
-                  <p>
-                    My commitment to continuous improvement drives my desire to
-                    stay current with industry trends and always push the
-                    boundaries of {`what's`} possible in web development.{" "}
-                    {`I'm`} passionate about creating efficient, scalable, and
-                    user-friendly applications that make a real difference in{" "}
-                    {`people's`} lives.
-                  </p>
+                  My commitment to continuous improvement drives my desire to
+                  stay current with industry trends and always push the
+                  boundaries of {`what's`} possible in web development. {`I'm`}
+                  passionate about creating efficient, scalable, and
+                  user-friendly applications that make a real difference in
+                  {`people's`} lives.
                 </motion.p>
                 <motion.div
                   className="flex flex-col sm:flex-row gap-4"
@@ -110,13 +117,14 @@ const About = () => {
                       <ChevronDown size={20} />
                     </motion.div>
                   </motion.button>
+                  {/* Uncomment if you want a resume button */}
                   {/* <motion.button
-                  className="bg-white text-primary px-6 py-2 rounded-md text-lg font-semibold shadow-md border border-primary transition-colors duration-200"
-                  whileHover={{ scale: 1.05, backgroundColor: "#f8f8f8" }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Download Resume
-                </motion.button> */}
+                    className="bg-white text-primary px-6 py-2 rounded-md text-lg font-semibold shadow-md border border-primary transition-colors duration-200"
+                    whileHover={{ scale: 1.05, backgroundColor: "#f8f8f8" }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Download Resume
+                  </motion.button> */}
                 </motion.div>
               </div>
 
@@ -135,8 +143,6 @@ const About = () => {
                   <img
                     src="/placeholder.svg?height=400&width=400"
                     alt="Shakil Ahmmed Joy"
-                    // layout="fill"
-                    // objectFit="cover"
                     className="rounded-lg shadow-lg"
                   />
                   <motion.div

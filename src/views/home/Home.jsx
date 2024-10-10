@@ -6,10 +6,11 @@ import Projects from "../../components/home/projects/Projects";
 import TechStack from "../../components/home/tech-stack/TechStack";
 import ContentLayout from "../../layouts/ContentLayout";
 import AnimatedShapes from "../../components/shared/AnimatedShapes";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 // import Navbar from "../../layouts/navbar/Menu";
 
 const Home = () => {
+  const [activeSection, setActiveSection] = useState("");
   useEffect(() => {
     const sections = document.querySelectorAll("section");
     console.log("🚀 ~ useEffect ~ sections:", sections);
@@ -24,6 +25,7 @@ const Home = () => {
         if (entry.isIntersecting) {
           const sectionId = entry.target.getAttribute("id");
           if (sectionId) {
+            setActiveSection(sectionId);
             window.history.replaceState(null, null, `#${sectionId}`);
           } else {
             window.history.replaceState = (null, null, null);
@@ -55,7 +57,7 @@ const Home = () => {
         id="about"
         className="snap-section  bg-white flex flex-col justify-center"
       >
-        <About />
+        <About activeSection={activeSection} />
       </section>
       <section
         id="tech-stack"

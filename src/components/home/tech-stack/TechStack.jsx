@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import {
   FaReact,
   FaVuejs,
@@ -88,6 +89,9 @@ const techStack = [
 const TechStack = () => {
   const [githubPushes, setGithubPushes] = useState(0);
 
+  const ref = useRef(null);
+  const iStackInView = useInView(ref, { once: false });
+
   useEffect(() => {
     // Simulating GitHub push data fetching
     const interval = setInterval(() => {
@@ -106,10 +110,15 @@ const TechStack = () => {
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
               {techStack.map((tech, index) => (
                 <motion.div
+                  ref={ref}
                   key={tech.name}
                   className={`${tech.color} rounded-lg shadow-lg p-6 flex flex-col items-center justify-center text-white cursor-pointer`}
                   initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  animate={
+                    iStackInView
+                      ? { opacity: 1, scale: 1 }
+                      : { opacity: 0, scale: 0.5 }
+                  } // only animate when in view
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={{
                     scale: 1.05,

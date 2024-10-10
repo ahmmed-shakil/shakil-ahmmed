@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { ChevronLeft } from "lucide-react";
 import ProjectCard from "../../shared/ProjectCard";
 import Title from "../../shared/Title";

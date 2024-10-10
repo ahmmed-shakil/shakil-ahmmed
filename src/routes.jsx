@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // routes.js
 import {
   Bars3BottomLeftIcon,
