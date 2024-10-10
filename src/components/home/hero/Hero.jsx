@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 
-import { useState, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
 import js from "../../../assets/img/hero/js.png";
 
@@ -58,6 +58,8 @@ const FloatingTechIcon = ({ src, alt }) => {
 export default function Hero() {
   const [isHovered, setIsHovered] = useState(false);
   const controls = useAnimation();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
 
   useEffect(() => {
     controls.start({
@@ -118,8 +120,9 @@ export default function Hero() {
         </div> */}
 
         <motion.div
+          ref={ref}
           initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
           transition={{ duration: 0.8 }}
           className="text-center z-10"
         >
@@ -147,9 +150,10 @@ export default function Hero() {
               color: "#dd2c5b",
               scale: 1.05,
             }}
+            ref={ref}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 0.8 }}
           >
             Download Resume
@@ -175,11 +179,16 @@ export default function Hero() {
             <motion.a
               key={index}
               href="#"
+              ref={ref}
               className="text-primary hover:text-primary-foreground transition-colors duration-200"
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -50, y: 50 }}
+              animate={
+                isInView
+                  ? { opacity: 1, y: 0, x: 0 }
+                  : { opacity: 0, y: 50, x: -50 }
+              }
               transition={{ duration: 0.8, delay: index * 0.1 }}
             >
               <Icon size={24} />

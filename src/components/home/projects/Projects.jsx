@@ -2,7 +2,8 @@
 import { ChevronLeft } from "lucide-react";
 import ProjectCard from "../../shared/ProjectCard";
 import Title from "../../shared/Title";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const Projects = () => {
   const projectsData = [
@@ -36,6 +37,9 @@ const Projects = () => {
     // Add more projects as needed
   ];
 
+  const ref = useRef(null);
+  const isStackInView = useInView(ref, { once: false });
+
   return (
     <div>
       <main className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,15 +47,21 @@ const Projects = () => {
         <div className="mt-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {projectsData.map((project, index) => (
-              <ProjectCard key={index} project={project} />
+              <ProjectCard key={index} project={project} i={index} />
             ))}
           </div>
         </div>
         <div className=" mt-14 flex justify-center">
           <motion.button
+            ref={ref}
             className="bg-primary text-white px-6 py-2 rounded-md text-md shadow-md transition-colors duration-200 flex items-center justify-center"
             whileHover={{ scale: 1.05, backgroundColor: "#c41e4a" }}
             whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={
+              isStackInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
+            }
+            transition={{ duration: 0.4, delay: 1 }}
             // onClick={handleReadMore}
           >
             View All

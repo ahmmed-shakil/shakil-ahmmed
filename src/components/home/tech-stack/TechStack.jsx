@@ -102,15 +102,14 @@ const TechStack = () => {
   }, []);
 
   return (
-    <div className="bg-white py-16">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         <Title title={"Tech Stack"} />
         <div className="grid grid-cols-1 md:grid-cols-1 gap-8 mt-8">
           <div className="md:col-span-2">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
               {techStack.map((tech, index) => (
                 <motion.div
-                  ref={ref}
                   key={tech.name}
                   className={`${tech.color} rounded-lg shadow-lg p-6 flex flex-col items-center justify-center text-white cursor-pointer`}
                   initial={{ opacity: 0, scale: 0.5 }}

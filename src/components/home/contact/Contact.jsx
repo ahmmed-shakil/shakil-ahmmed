@@ -1,10 +1,13 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useRef, useState } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Send, Mail, Phone, MapPin } from "lucide-react";
 import Title from "../../shared/Title";
 
 const Contact = () => {
+  const textRef = useRef(null);
+  const iStackInView = useInView(textRef, { once: false });
+
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -65,12 +68,25 @@ const Contact = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center mt-10">
           <motion.div
             className="space-y-8"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            // ref={textRef}
+            // initial={{ opacity: 0, x: -50, y: 50 }}
+            // animate={
+            //   iStackInView
+            //     ? { opacity: 1, x: 0, y: 0 }
+            //     : { opacity: 0, x: -50, y: 50 }
+            // }
+            // transition={{ duration: 0.5, delay: 0.2 }}
           >
             <motion.div
               className="flex items-center space-x-4 text-md"
+              ref={textRef}
+              initial={{ opacity: 0, x: -50, y: 50 }}
+              animate={
+                iStackInView
+                  ? { opacity: 1, x: 0, y: 0 }
+                  : { opacity: 0, x: -50, y: 50 }
+              }
+              transition={{ duration: 0.5, delay: 0.2 }}
               whileHover={{ scale: 1.05 }}
             >
               <div className="bg-primary rounded-full p-3">
@@ -84,6 +100,14 @@ const Contact = () => {
             <motion.div
               className="flex items-center space-x-4 text-md"
               whileHover={{ scale: 1.05 }}
+              ref={textRef}
+              initial={{ opacity: 0, x: -50, y: 50 }}
+              animate={
+                iStackInView
+                  ? { opacity: 1, x: 0, y: 0 }
+                  : { opacity: 0, x: -50, y: 50 }
+              }
+              transition={{ duration: 0.5, delay: 0.4 }}
             >
               <div className="bg-primary rounded-full p-3">
                 <Phone className="text-white" />
@@ -96,6 +120,14 @@ const Contact = () => {
             <motion.div
               className="flex items-center space-x-4 text-md"
               whileHover={{ scale: 1.05 }}
+              ref={textRef}
+              initial={{ opacity: 0, x: -50, y: 50 }}
+              animate={
+                iStackInView
+                  ? { opacity: 1, x: 0, y: 0 }
+                  : { opacity: 0, x: -50, y: 50 }
+              }
+              transition={{ duration: 0.5, delay: 0.6 }}
             >
               <div className="bg-primary rounded-full p-3">
                 <Phone className="text-white" />
@@ -108,6 +140,14 @@ const Contact = () => {
             <motion.div
               className="flex items-center space-x-4 text-md"
               whileHover={{ scale: 1.05 }}
+              ref={textRef}
+              initial={{ opacity: 0, x: -50, y: 50 }}
+              animate={
+                iStackInView
+                  ? { opacity: 1, x: 0, y: 0 }
+                  : { opacity: 0, x: -50, y: 50 }
+              }
+              transition={{ duration: 0.5, delay: 0.8 }}
             >
               <div className="bg-primary rounded-full p-3">
                 <MapPin className="text-white" />
@@ -120,10 +160,13 @@ const Contact = () => {
           </motion.div>
           <motion.form
             onSubmit={handleSubmit}
+            ref={textRef}
             className="space-y-6 col-span-2"
             initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            animate={
+              iStackInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }
+            }
+            transition={{ duration: 0.8, delay: 0 }}
           >
             <div className="relative">
               <input
