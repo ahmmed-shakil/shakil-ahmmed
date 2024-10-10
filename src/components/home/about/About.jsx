@@ -1,21 +1,26 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Title from "../../shared/Title";
 
-const About = ({ activeSection }) => {
-  console.log("🚀 ~ About ~ activeSection:", activeSection);
+const About = () => {
+  // console.log("🚀 ~ About ~ activeSection:", activeSection);
   const [isExpanded, setIsExpanded] = useState(false);
   const controls = useAnimation();
 
-  useEffect(() => {
-    if (activeSection === "about") {
-      controls.start({ opacity: 1, y: 0 });
-    } else {
-      controls.start({ opacity: 0, y: 50 });
-    }
-  }, [activeSection, controls]);
+  const leftRef = useRef(null);
+  const rightRef = useRef(null);
+  const isLeftInView = useInView(leftRef, { once: false });
+  const isRightInView = useInView(rightRef, { once: false });
+
+  // useEffect(() => {
+  //   if (activeSection === "about") {
+  //     controls.start(  { opacity: 1, y: 0 });
+  //   } else {
+  //     controls.start({ opacity: 0, y: 50 });
+  //   }
+  // }, [activeSection, controls]);
 
   const handleReadMore = () => {
     setIsExpanded((prev) => !prev);
@@ -33,18 +38,30 @@ const About = ({ activeSection }) => {
         <div className="rounded-md mt-8 ">
           <div className=" mx-auto ">
             <motion.div
+              ref={leftRef}
               className="grid grid-cols-1 md:grid-cols-2 items-center gap-4"
-              initial={{ opacity: 0, y: 50 }}
-              animate={controls} // Use animation controls here
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              // initial={{ opacity: 0, y: 50 }}
+              // animate={
+              //   isLeftInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
+              // } // Use animation controls here
+              // transition={{ duration: 0.8, ease: "easeOut" }}
             >
               {/* Left side - Content */}
-              <div className="order-2 md:order-1">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={
+                  isLeftInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }
+                }
+                transition={{ duration: 1, delay: 0 }}
+                className="order-2 md:order-1"
+              >
                 <motion.h2
                   className="text-sm font-semibold text-gray-800 mb-0"
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
+                  // initial={{ opacity: 0, x: -50 }}
+                  // animate={
+                  //   isLeftInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }
+                  // }
+                  // transition={{ duration: 0.5, delay: 0.2 }}
                 >
                   I am
                 </motion.h2>
@@ -98,9 +115,11 @@ const About = ({ activeSection }) => {
                 </motion.p>
                 <motion.div
                   className="flex flex-col sm:flex-row gap-4"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.7 }}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={
+                    isLeftInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
+                  }
+                  transition={{ duration: 0.4, delay: 1 }}
                 >
                   <motion.button
                     className="bg-primary text-white px-6 py-2 rounded-md text-md shadow-md transition-colors duration-200 flex items-center justify-center"
@@ -126,14 +145,16 @@ const About = ({ activeSection }) => {
                     Download Resume
                   </motion.button> */}
                 </motion.div>
-              </div>
+              </motion.div>
 
               {/* Right side - Image */}
               <motion.div
                 className="order-1 md:order-2"
                 initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                animate={
+                  isLeftInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }
+                }
+                transition={{ duration: 1, delay: 0 }}
               >
                 <motion.div
                   whileHover={{ scale: 1.05 }}
