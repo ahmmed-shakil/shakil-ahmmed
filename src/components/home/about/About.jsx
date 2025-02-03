@@ -101,10 +101,10 @@ export default function About() {
                 >
                   My commitment to continuous improvement drives my desire to
                   stay current with industry trends and always push the
-                  boundaries of {`what's`} possible in web development. {`I'm`}
+                  boundaries of {`what's`} possible in web development. I'm
                   passionate about creating efficient, scalable, and
                   user-friendly applications that make a real difference in
-                  {`people's`} lives.
+                  people's lives.
                 </motion.p>
 
                 {/* Button */}
