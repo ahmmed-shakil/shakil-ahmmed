@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { routes } from "./routes";
 import "./index.css";
 import CustomCursor from "./components/shared/CustomCursor";
+import LearnMode from "./views/learn-more/LearnMode";
+import ContentLayout from "./layouts/ContentLayout";
 
 function AppLayout({ Component, pageProps }) {
   const getLayout = Component.getLayout || ((page) => page);
@@ -28,6 +30,14 @@ function App() {
             // loader={routes}
           />
         ))}
+        <Route
+          path="/about-me"
+          element={
+            <ContentLayout>
+              <LearnMode />
+            </ContentLayout>
+          }
+        />
       </Routes>
     </Router>
   );

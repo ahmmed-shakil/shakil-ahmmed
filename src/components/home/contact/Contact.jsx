@@ -92,7 +92,9 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="font-semibold">Email</h3>
-                <p className="text-muted-foreground">hello@example.com</p>
+                <p className="text-muted-foreground">
+                  shakilahmmed252@gmail.com
+                </p>
               </div>
             </motion.div>
             <motion.div
@@ -110,7 +112,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="font-semibold">Phone</h3>
-                <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                <p className="text-muted-foreground">+880 1889987622</p>
               </div>
             </motion.div>
             <motion.div
@@ -128,7 +130,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="font-semibold">WhatsApp</h3>
-                <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                <p className="text-muted-foreground">+880 1796282969</p>
               </div>
             </motion.div>
             <motion.div
@@ -146,7 +148,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="font-semibold">Location</h3>
-                <p className="text-muted-foreground">New York, NY</p>
+                <p className="text-muted-foreground">Mymensingh, Bangladesh</p>
               </div>
             </motion.div>
           </motion.div>

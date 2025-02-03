@@ -65,12 +65,12 @@ const Home = () => {
       >
         <TechStack />
       </section>
-      <section
+      {/* <section
         id="projects"
         className=" snap-section  bg-white flex flex-col justify-center p-0 m-0"
       >
         <Projects />
-      </section>
+      </section> */}
       <section
         id="contact"
         className=" snap-section  bg-white flex flex-col justify-center p-0 m-0"

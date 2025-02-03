@@ -1,9 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Title from "../../shared/Title";
+import photo from "../../../assets/img/about/about_img.jpg";
+import { useNavigate } from "react-router-dom";
 
 export default function About() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -13,17 +15,20 @@ export default function About() {
   const buttonRef = useRef(null);
   const rightRef = useRef(null);
 
+  const navigate = useNavigate();
+
   const isLeftInView = useInView(leftRef, { once: false });
   const isButtonInView = useInView(buttonRef, { once: false });
   const isRightInView = useInView(rightRef, { once: false });
 
   const handleReadMore = () => {
-    setIsExpanded((prev) => !prev);
+    // setIsExpanded((prev) => !prev);
     controls.start({
       height: isExpanded ? "0px" : "auto",
       opacity: isExpanded ? 0 : 1,
       transition: { duration: 0.5, ease: "easeInOut" },
     });
+    navigate("/about-me");
   };
 
   const containerVariants = {
@@ -31,8 +36,8 @@ export default function About() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, // Stagger time between each item
-        delayChildren: 0.2, // Delay before starting the staggered animations
+        staggerChildren: 0.4, // Stagger time between each item
+        delayChildren: 0.3, // Delay before starting the staggered animations
       },
     },
   };
@@ -118,9 +123,9 @@ export default function About() {
                         ? { opacity: 1, y: 0 }
                         : { opacity: 0, y: 50 }
                     }
-                    transition={{ duration: 0.5, delay: 0.8 }}
+                    transition={{ duration: 0.5, delay: 1.4 }}
                   >
-                    {isExpanded ? "Show Less" : "Learn More About Me"}
+                    Learn More About Me
                     <motion.div
                       animate={{ rotate: isExpanded ? 180 : 0 }}
                       transition={{ duration: 0.3 }}
@@ -146,12 +151,12 @@ export default function About() {
                   className="relative w-full h-80 aspect-square max-w-md mx-auto"
                 >
                   <img
-                    src="/placeholder.svg?height=400&width=400"
+                    src={photo}
                     alt="Shakil Ahmmed Joy"
-                    className="rounded-lg shadow-lg"
+                    className="rounded-lg shadow-lg h-[370px]"
                   />
                   <motion.div
-                    className="absolute inset-0 bg-primary rounded-lg"
+                    className="absolute inset-0  rounded-lg"
                     initial={{ opacity: 0.6 }}
                     whileHover={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}

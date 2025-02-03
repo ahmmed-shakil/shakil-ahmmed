@@ -118,14 +118,14 @@ export const routes = [
     show: true,
     icon: <PersonStanding className=" h-5 w-5 inline-block" />,
   },
-  {
-    path: "/#projects",
-    element: <Projects />, // Points to the same page, but scrolls to 'Projects'
-    getLayout: (page) => <>{page}</>,
-    name: "Projects",
-    show: true,
-    icon: <ComputerDesktopIcon className=" h-5 w-5 inline-block" />,
-  },
+  // {
+  //   path: "/#projects",
+  //   element: <Projects />, // Points to the same page, but scrolls to 'Projects'
+  //   getLayout: (page) => <>{page}</>,
+  //   name: "Projects",
+  //   show: true,
+  //   icon: <ComputerDesktopIcon className=" h-5 w-5 inline-block" />,
+  // },
   {
     path: "/#contact",
     element: <Contact />,

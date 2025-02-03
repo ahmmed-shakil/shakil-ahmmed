@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
 import js from "../../../assets/img/hero/js.png";
+import { useNavigate } from "react-router-dom";
 
 const AnimatedShape = ({ children }) => (
   <motion.div
@@ -60,6 +61,17 @@ export default function Hero() {
   const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
+
+  const navigate = useNavigate();
+
+  const socialLinks = [
+    { Icon: Github, href: "https://github.com/ahmmed-shakil" },
+    { Icon: Linkedin, href: "https://www.linkedin.com/in/shakil-ahmmed-joy/" },
+    {
+      Icon: Mail,
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=shakilahmmed252@gmail.com",
+    },
+  ];
 
   useEffect(() => {
     controls.start({
@@ -143,7 +155,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.div className="flex flex-col md:flex-row items-center gap-3 z-10">
-          <motion.button
+          {/* <motion.button
             className="bg-primary text-white px-8 py-3 border border-primary rounded-md text-md font-semibold shadow-lg transition-colors duration-200"
             whileHover={{
               backgroundColor: "white",
@@ -157,7 +169,7 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
           >
             Download Resume
-          </motion.button>
+          </motion.button> */}
           {/* <motion.button
             className="bg-slate-100 text-primary px-8 py-3 rounded-md text-md font-semibold shadow-lg border border-primary transition-colors duration-200"
             whileHover={{
@@ -175,10 +187,10 @@ export default function Hero() {
         </motion.div>
 
         <motion.div className="flex space-x-6 mt-8 z-10">
-          {[Github, Linkedin, Mail].map((Icon, index) => (
+          {socialLinks.map(({ Icon, href }, index) => (
             <motion.a
               key={index}
-              href="#"
+              href={href}
               ref={ref}
               className="text-primary hover:text-primary-foreground transition-colors duration-200"
               whileHover={{ scale: 1.2 }}
@@ -186,6 +198,8 @@ export default function Hero() {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.8, delay: 0 }}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Icon size={24} />
             </motion.a>

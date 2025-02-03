@@ -51,7 +51,7 @@ const Projects = () => {
             ))}
           </div>
         </div>
-        <div className=" mt-14 flex justify-center">
+        {/* <div className=" mt-14 flex justify-center">
           <motion.button
             ref={ref}
             className="bg-primary text-white px-6 py-2 rounded-md text-md shadow-md transition-colors duration-200 flex items-center justify-center"
@@ -73,7 +73,7 @@ const Projects = () => {
               <ChevronLeft size={20} />
             </motion.div>
           </motion.button>
-        </div>
+        </div> */}
       </main>
     </div>
   );
