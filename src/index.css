@@ -13,7 +13,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth; /* Enable smooth scrolling */
   overflow: auto; /* Enable scrolling */
-  cursor: none;
+  /* cursor: none; */
 }
 
 html {

@@ -54,7 +54,7 @@ const Contact = () => {
   };
 
   return (
-    <div>
+    <div className=" py-10 md:py-0">
       <div className="max-w-6xl flex flex-col justify-center mx-auto px-4 sm:px-6 lg:px-8">
         {/* <motion.h2
           className="text-4xl font-bold text-center mb-12"

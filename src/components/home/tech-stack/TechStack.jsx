@@ -102,7 +102,7 @@ const TechStack = () => {
   }, []);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white py-10 md:py-0">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         <Title title={"Tech Stack"} />
         <div className="grid grid-cols-1 md:grid-cols-1 gap-8 mt-8">

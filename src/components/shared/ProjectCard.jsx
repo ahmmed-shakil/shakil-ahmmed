@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 "use client";
 
@@ -60,23 +61,16 @@ const ProjectCard = ({ project, i }) => {
             rel="noopener noreferrer"
             className="bg-blue-500 px-2 py-1 rounded"
           >
-            Client
+            Live Site
           </a>
-          <a
-            href={project.serverLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-green-500 px-2 py-1 rounded"
-          >
-            Server
-          </a>
+
           <a
             href={project.githubLink}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-gray-600 px-2 py-1 rounded"
           >
-            GitHub
+            Client Code
           </a>
           <a
             href={project.githubLink2}
@@ -84,7 +78,7 @@ const ProjectCard = ({ project, i }) => {
             rel="noopener noreferrer"
             className="bg-gray-600 px-2 py-1 rounded"
           >
-            GitHub
+            Server Code
           </a>
         </div>
       </motion.div>

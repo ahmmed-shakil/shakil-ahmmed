@@ -1,28 +1,27 @@
 import {
-  BuildingIcon,
   CodeIcon,
+  BuildingIcon,
   BuildingIcon as BuildingOfficeIcon,
 } from "lucide-react";
 
 export default function LearnMode() {
   return (
-    <div className="bg-slate-100 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-white dark:bg-slate-800 py-8 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        {/* <h2 className="text-3xl font-extrabold text-center text-white mb-2">
-          LearnMode
-        </h2> */}
-        {/* <div className="w-24 h-1 bg-yellow-500 mx-auto mb-12"></div> */}
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className=" p-6 border rounded-lg shadow-lg">
-            <div className=" ">
-              <h3 className="text-xl font-bold mb-6">Education</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-white dark:bg-slate-700 p-6 border dark:border-slate-600 rounded-lg shadow-lg">
+            <div>
+              <h3 className="text-xl font-bold mb-6 dark:text-white">
+                Education
+              </h3>
               {educationData.map((item, index) => (
                 <div key={index} className="mb-6 last:mb-0">
                   <div className="flex items-start">
-                    <BuildingIcon className="w-6 h-6 text-primary mr-3 mt-1" />
+                    <BuildingIcon className="w-6 h-6 text-primary mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="text-lg font-semibold ">{item.title}</h4>
+                      <h4 className="text-lg font-semibold dark:text-white">
+                        {item.title}
+                      </h4>
                       <p className="text-sm text-gray-400">{item.year}</p>
                       {item.details && (
                         <ul className="mt-2 text-sm text-gray-400 list-disc list-inside">
@@ -36,44 +35,56 @@ export default function LearnMode() {
                 </div>
               ))}
             </div>
-            <div className=" mt-10">
-              <h3 className="text-xl font-bold  mb-6">Experience</h3>
-              <div className="flex items-start">
-                <BuildingOfficeIcon className="w-6 h-6 text-primary mr-3 mt-1" />
-                <div>
-                  <h4 className="text-lg font-semibold ">
-                    Software Developer Engineer I (SDE)
-                  </h4>
-                  <p className="text-sm text-gray-400">
-                    Code Driven Labs, India
-                  </p>
-                  <p className="text-sm text-gray-400">May, 2023 - Dec, 2024</p>
+            <div className="mt-10">
+              <h3 className="text-xl font-bold mb-6 dark:text-white">
+                Experience
+              </h3>
+              <div className="mb-6">
+                <div className="flex items-start">
+                  <BuildingOfficeIcon className="w-6 h-6 text-primary mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="text-lg font-semibold dark:text-white">
+                      Software Developer Engineer I (SDE)
+                    </h4>
+                    <p className="text-sm text-gray-400">
+                      Code Driven Labs, India
+                    </p>
+                    <p className="text-sm text-gray-400">
+                      May, 2023 - Dec, 2024
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div className="flex items-start">
-                <BuildingOfficeIcon className="w-6 h-6 text-primary mr-3 mt-1" />
-                <div>
-                  <h4 className="text-lg font-semibold ">
-                    Software Developer Engineer II (SDE)
-                  </h4>
-                  <p className="text-sm text-gray-400">
-                    Code Driven Labs, India
-                  </p>
-                  <p className="text-sm text-gray-400">Jan, 2025 - Present</p>
+              <div>
+                <div className="flex items-start">
+                  <BuildingOfficeIcon className="w-6 h-6 text-primary mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="text-lg font-semibold dark:text-white">
+                      Software Developer Engineer II (SDE)
+                    </h4>
+                    <p className="text-sm text-gray-400">
+                      Code Driven Labs, India
+                    </p>
+                    <p className="text-sm text-gray-400">Jan, 2025 - Present</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="space-y-12">
-            <div className=" border p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold  mb-6">Courses</h3>
+          <div>
+            <div className="bg-white dark:bg-slate-700 border dark:border-slate-600 p-6 rounded-lg shadow-lg h-full">
+              <h3 className="text-xl font-bold mb-6 dark:text-white">
+                Courses
+              </h3>
               {coursesData.map((course, index) => (
                 <div key={index} className="mb-6 last:mb-0">
                   <div className="flex items-start">
-                    <CodeIcon className="w-6 h-6 text-primary mr-3 mt-1" />
+                    <CodeIcon className="w-6 h-6 text-primary mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="text-lg font-semibold ">{course.title}</h4>
+                      <h4 className="text-lg font-semibold dark:text-white">
+                        {course.title}
+                      </h4>
                       <p className="text-sm text-gray-400">{course.year}</p>
                       <p className="mt-2 text-sm text-gray-400">
                         {course.description}
@@ -82,7 +93,7 @@ export default function LearnMode() {
                         {course.skills.map((skill, idx) => (
                           <span
                             key={idx}
-                            className="inline-block px-2 py-1 text-xs font-semibold rounded-full bg-slate-200 text-primary"
+                            className="inline-block px-2 py-1 text-xs font-semibold rounded-full bg-slate-200 dark:bg-slate-600 text-primary dark:text-white"
                           >
                             {skill}
                           </span>

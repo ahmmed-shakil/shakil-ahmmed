@@ -110,7 +110,7 @@ export default function Hero() {
 
   return (
     <div className=" w-full ">
-      <div className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-gradient-to-br from-white to-gray-100 text-primary p-4">
+      <div className="relative min-h-[80vh] md:min-h-screen flex flex-col justify-center items-center overflow-hidden bg-gradient-to-br from-white to-gray-100 text-primary p-4">
         {/* Animated background shapes */}
         <div className="absolute inset-0 overflow-hidden">
           <AnimatedShape>
@@ -155,8 +155,8 @@ export default function Hero() {
         </motion.div>
 
         <motion.div className="flex flex-col md:flex-row items-center gap-3 z-10">
-          {/* <motion.button
-            className="bg-primary text-white px-8 py-3 border border-primary rounded-md text-md font-semibold shadow-lg transition-colors duration-200"
+          <motion.button
+            className="bg-primary text-white px-8 py-3 border border-primary rounded-md text-md font-semibold shadow-lg transition-all ease-in-out duration-75"
             whileHover={{
               backgroundColor: "white",
               color: "#dd2c5b",
@@ -169,7 +169,7 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
           >
             Download Resume
-          </motion.button> */}
+          </motion.button>
           {/* <motion.button
             className="bg-slate-100 text-primary px-8 py-3 rounded-md text-md font-semibold shadow-lg border border-primary transition-colors duration-200"
             whileHover={{
@@ -207,7 +207,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 hidden md:block"
           animate={controls}
         >
           <ChevronDown className="w-8 h-8 text-primary" />

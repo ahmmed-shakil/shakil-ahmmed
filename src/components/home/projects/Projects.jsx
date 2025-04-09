@@ -41,11 +41,11 @@ const Projects = () => {
   const isStackInView = useInView(ref, { once: false });
 
   return (
-    <div>
+    <div className=" py-10 md:py-0">
       <main className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8">
         <Title title={"Projects"} />
         <div className="mt-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 md:gap-6">
             {projectsData.map((project, index) => (
               <ProjectCard key={index} project={project} i={index} />
             ))}
