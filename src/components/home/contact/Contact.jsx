@@ -155,7 +155,7 @@ const Contact = () => {
           <motion.form
             onSubmit={handleSubmit}
             ref={textRef}
-            className="space-y-6 col-span-2"
+            className="space-y-6 col-span-2 mt-10 md:mt-0"
             initial={{ opacity: 0, y: 50 }}
             animate={
               iStackInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
